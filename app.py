@@ -29,6 +29,15 @@ for i in range(1, num_clans + 1):
 
 # Type Menu Dropdown ke liye
 sort_order = st.selectbox("Type", ["War Stars", "Top Member", "Donations", "EOS Trophies","Capital Gold Contributed","Capital Gold Looted","Main Base","Builder Base","Capital","All"])
+with st.spinner("Loading..."):
+    # Place the code that updates the display inside the spinner context
+    for key, value in file_uploads.items():
+        # st.subheader(key)
+        if value:
+            file_data = value.read()  # Read the file data
+            file_name = value.name
+            file_size = value.size
+            # st.write(f"File Name: {file_name}")
 for key, value in file_uploads.items():
     # st.subheader(key)
     if value:
